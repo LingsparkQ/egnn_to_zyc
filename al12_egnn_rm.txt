@@ -1,0 +1,30 @@
+alchemy12 mu all number: 7776
+ mae: 0.1378674
+coef: 0.9907597
+alchemy12 alpha all number: 7776
+ mae: 22.173908
+coef: 0.9803968
+alchemy12 homo all number: 7776
+ mae: 0.1310081
+coef: 0.9559884
+alchemy12 lumo all number: 7776
+ mae: 0.1459913
+coef: 0.9739411
+alchemy12 gap all number: 7776
+ mae: 0.1675365
+coef: 0.9712002
+alchemy12 r2 all number: 7776
+ mae: 213.5145693
+coef: 0.9994448
+alchemy12 zpve all number: 7776
+ mae: 6040.1400812
+coef: 0.999861
+alchemy12 U0 all number: 7776
+ mae: 11.484461
+coef: 0.9910482
+alchemy12 H all number: 7776
+ mae: 10.889755
+coef: 0.997882
+alchemy12 G all number: 7776
+ mae: 4.8276406
+coef: 0.9976894

@@ -57,6 +57,7 @@ class ProcessedDataset(Dataset):
         self.included_species = included_species
 
         self.data['one_hot'] = self.data['charges'].unsqueeze(-1) == included_species.unsqueeze(0).unsqueeze(0)
+        # print('charges shape:', self.data['charges'].shape)
 
         self.num_species = len(included_species)
         self.max_charge = max(included_species)

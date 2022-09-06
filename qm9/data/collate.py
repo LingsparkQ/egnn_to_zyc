@@ -70,7 +70,7 @@ def collate_fn(batch):
         The collated data.
     """
     batch = {prop: batch_stack([mol[prop] for mol in batch]) for prop in batch[0].keys()}
-
+    # print('batch', batch.keys())
     to_keep = (batch['charges'].sum(0) > 0)
 
     batch = {key: drop_zeros(prop, to_keep) for key, prop in batch.items()}
@@ -81,6 +81,7 @@ def collate_fn(batch):
     #Obtain edges
     batch_size, n_nodes = atom_mask.size()
     edge_mask = atom_mask.unsqueeze(1) * atom_mask.unsqueeze(2)
+    # print('batch', batch.keys())
 
     #mask diagonal
     diag_mask = ~torch.eye(edge_mask.size(1), dtype=torch.bool).unsqueeze(0)
@@ -89,5 +90,6 @@ def collate_fn(batch):
     #edge_mask = atom_mask.unsqueeze(1) * atom_mask.unsqueeze(2)
     batch['edge_mask'] = edge_mask.view(batch_size * n_nodes * n_nodes, 1)
 
+    # print('batch', batch.keys())
 
     return batch

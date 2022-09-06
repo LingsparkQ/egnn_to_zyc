@@ -1,0 +1,30 @@
+alchemy9 mu all number: 21066
+ mae: 0.0448766
+coef: 0.9980706
+alchemy9 alpha all number: 21066
+ mae: 0.4732958
+coef: 0.9969474
+alchemy9 homo all number: 21066
+ mae: 0.0890871
+coef: 0.9784929
+alchemy9 lumo all number: 21066
+ mae: 0.0860815
+coef: 0.9894157
+alchemy9 gap all number: 21066
+ mae: 0.078935
+coef: 0.9793673
+alchemy9 r2 all number: 21066
+ mae: 0.2414574
+coef: 0.9999991
+alchemy9 zpve all number: 21066
+ mae: 4620.1359797
+coef: 0.9999639
+alchemy9 U0 all number: 21066
+ mae: 7.1221478
+coef: 0.9992993
+alchemy9 H all number: 21066
+ mae: 7.1247247
+coef: 0.9990855
+alchemy9 G all number: 21066
+ mae: 7.1331131
+coef: 0.998145

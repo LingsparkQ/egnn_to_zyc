@@ -11,9 +11,20 @@ def retrieve_dataloaders(batch_size, num_workers=1):
                                                                     subtract_thermo=args.subtract_thermo,
                                                                     force_download=args.force_download
                                                                     )
+    # print('datasets:', datasets)
     qm9_to_eV = {'U0': 27.2114, 'U': 27.2114, 'G': 27.2114, 'H': 27.2114, 'zpve': 27211.4, 'gap': 27.2114, 'homo': 27.2114,
                  'lumo': 27.2114}
-
+    # print('datasets type:', type(datasets))
+    # print('datasets item:', datasets.items())
+    # print('datasets train:', type(datasets['train']))
+    # print(datasets['train'])
+    # for i, data in enumerate(datasets['train']):
+    #     print('data type in datasets train:', type(data))
+    #     print(data.keys())
+    #     for _ in data.keys():
+    #         print(_, data[_].shape)
+    #     break
+    # print('dataset items', datasets.items())
     for dataset in datasets.values():
         dataset.convert_units(qm9_to_eV)
 

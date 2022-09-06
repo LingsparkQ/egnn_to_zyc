@@ -10,7 +10,7 @@ import json
 parser = argparse.ArgumentParser(description='QM9 Example')
 parser.add_argument('--exp_name', type=str, default='exp_1', metavar='N',
                     help='experiment_name')
-parser.add_argument('--batch_size', type=int, default=96, metavar='N',
+parser.add_argument('--batch_size', type=int, default=1, metavar='N',
                     help='input batch size for training (default: 128)')
 parser.add_argument('--epochs', type=int, default=1000, metavar='N',
                     help='number of epochs to train (default: 10)')
@@ -50,24 +50,30 @@ args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
 device = torch.device("cuda" if args.cuda else "cpu")
 dtype = torch.float32
-print(args)
+# print(args)
 
 utils.makedir(args.outf)
 utils.makedir(args.outf + "/" + args.exp_name)
 
 dataloaders, charge_scale = dataset.retrieve_dataloaders(args.batch_size, args.num_workers)
+# print(dataloaders['train'])
 # compute mean and mean absolute deviation
 meann, mad = qm9_utils.compute_mean_mad(dataloaders, args.property)
 
 model = EGNN(in_node_nf=15, in_edge_nf=0, hidden_nf=args.nf, device=device, n_layers=args.n_layers, coords_weight=1.0,
              attention=args.attention, node_attr=args.node_attr)
 
-print(model)
+# print(model)
 
 optimizer = optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
 lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, args.epochs)
 loss_l1 = nn.L1Loss()
-
+# print(dataloaders['train'])
+for i, data in enumerate(dataloaders['train']):
+    print(data.keys())
+    for _ in data.keys():
+        print(_, data[_].shape)
+    break
 
 def train(epoch, loader, partition='train'):
     lr_scheduler.step()

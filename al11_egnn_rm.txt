@@ -1,0 +1,30 @@
+alchemy11 mu all number: 29210
+ mae: 0.1107948
+coef: 0.9884127
+alchemy11 alpha all number: 29210
+ mae: 15.0721428
+coef: 0.9883614
+alchemy11 homo all number: 29210
+ mae: 0.1132577
+coef: 0.9588511
+alchemy11 lumo all number: 29210
+ mae: 0.1018123
+coef: 0.9824767
+alchemy11 gap all number: 29210
+ mae: 0.1337364
+coef: 0.9687031
+alchemy11 r2 all number: 29210
+ mae: 139.3495823
+coef: 0.9962221
+alchemy11 zpve all number: 29210
+ mae: 5493.5045074
+coef: 0.9999138
+alchemy11 U0 all number: 29210
+ mae: 4.6512128
+coef: 0.9913975
+alchemy11 H all number: 29210
+ mae: 4.521342
+coef: 0.9980593
+alchemy11 G all number: 29210
+ mae: 0.6450803
+coef: 0.997069

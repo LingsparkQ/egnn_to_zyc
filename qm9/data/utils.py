@@ -71,11 +71,10 @@ def initialize_datasets(args, datadir, dataset, subset=None, splits=None,
 
     # Get a list of all species across the entire dataset
     all_species = _get_species(datasets, ignore_check=False)
-
+    # print('all_species:', all_species.shape)
     # Now initialize MolecularDataset based upon loaded data
     datasets = {split: ProcessedDataset(data, num_pts=num_pts.get(
         split, -1), included_species=all_species, subtract_thermo=subtract_thermo) for split, data in datasets.items()}
-
     # Now initialize MolecularDataset based upon loaded data
 
     # Check that all datasets have the same included species:
